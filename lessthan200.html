@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel and transprt booking</title>
+  <link rel="icon" type="image/x-icon" href="WhatsApp Image 2025-06-27 at 11.09.47 AM.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="cabs.css"/>
+  
+</head>
+<body>
+  <header>
+    <h1>Ayya Thunai Cabs</h1>
+    <p>Your journey begins here</p>
+  </header>
+<style>
+  body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .call-button {
+      gap: 10px;
+      background: linear-gradient(135deg, #25D366, #128C7E); /* WhatsApp-like gradient */
+      color: #fff;
+      padding: 15px 25px;
+      align-items: center;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .call-button i {
+      align-items: center;
+      font-size: 20px;
+      background: #fff;
+      color: #25D366;
+      border-radius: 50%;
+      padding: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .call-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .call-button:hover i {
+      background: #25D366;
+      color: #fff;
+    }
+  </style>
+</head>
+  <center>
+    <h1>Book in less than 200km call this number and book vehicle</h1>
+  <a href="tel:+918682905640" class="call-button">
+    <i class="fas fa-phone-alt"></i> Call Us: +91 86829 05640
+  </a>
+  </center>
+  <section class="destinations">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="auto.png" alt="AUTO"/>
+        <h3>AUTO</h3>
+        <h4>3+1</h4>
+      </div>
+      <div class="card">
+        <img src="tata ace.png" alt="TATA ACE"/>
+        <h3>TATA ACE</h3>
+        <h4>1000kg</h4>
+      </div>
+      <div class="card">
+        <img src="pickup.png" alt="MAHENDRA PICKUP"/>
+        <h3>MAHENDRA PICKUP</h3>
+        <h4>1800kg</h4>
+      </div>
+      <div class="card">
+        <img src="car.png" alt="CAR"/>
+        <h3>CAR</h3>
+        <h4>4+1 | 7+1</h4>
+      </div>
+      <div class="card">
+        <img src="tourist van.avif" alt="MARCOPOLO VAN"/>
+        <h3>MARCOPOLO VAN</h3>
+        <h4>20+1</h4>
+      </div>
+    </div>
+  </section>
+
+  <center>
+    <h2>Our Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.051700719703!2d77.51665361020655!3d8.686633691325646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b043f3e231eb5bf%3A0xaa21f7897e78eb3c!2z4K6F4K6v4K-N4K6v4K6-IOCupOCvgeCuo-CviCDgrpXgr4fgrqrgr43grrjgr40!5e0!3m2!1sen!2sin!4v1751348261612!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </center>
+
+  <footer>
+    <p>&copy; 2025 Ayya Thunai Cabs & Travels</p>
+    <p>Contact: 8754795314 | 8682906540</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/ayya_thunai_cabs" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/1J9NHWXJ8q/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/918682905640" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    const transportRates = {
+      "TOURIST VAN": 22,
+      "CAR": 16,
+      "MAHENDIRA PICKUP": 16,
+      "TATA ACE": 15,
+      "AUTO": 12
+    };
+
+    async function getCoordinates(place) {
+      const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`;
+      const response = await fetch(url, {
+        headers: { 'User-Agent': 'AyyaThunaiTravels/1.0 (contact@example.com)' }
+      });
+      const data = await response.json();
+      if (data.length === 0) throw new Error(`Location not found: ${place}`);
+      return {
+        lat: parseFloat(data[0].lat),
+        lon: parseFloat(data[0].lon),
+        name: data[0].display_name
+      };
+    }
+
+    function toRadians(deg) {
+      return deg * Math.PI / 180;
+    }
+
+    function haversineDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371;
+      const dLat = toRadians(lat2 - lat1);
+      const dLon = toRadians(lon2 - lon1);
+      const a = Math.sin(dLat / 2) ** 2 +
+                Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+                Math.sin(dLon / 2) ** 2;
+      return 2 * R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    }
+
+    document.getElementById("travelForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const from = document.getElementById("from").value.trim();
+      const to = document.getElementById("to").value.trim();
+      const transport = document.getElementById("transport").value.trim();
+      const message = document.getElementById("message");
+      const codSuccess = document.getElementById("codSuccess");
+      const paymentOptions = document.getElementById("paymentOptions");
+
+      codSuccess.textContent = "";
+      message.textContent = "Calculating...";
+      paymentOptions.style.display = "none";
+
+      try {
+        const [fromCoord, toCoord] = await Promise.all([
+          getCoordinates(from),
+          getCoordinates(to)
+        ]);
+      
+        // Calculate distance FROM → TO
+const distance = haversineDistance(fromCoord.lat, fromCoord.lon, toCoord.lat, toCoord.lon);
+
+// Get Veeravanallur coordinates
+const veeravanallurCoord = await getCoordinates("Veeravanallur");
+
+// Calculate distance Veeravanallur → FROM
+const distanceFromVeeravanallur = haversineDistance(
+  veeravanallurCoord.lat, veeravanallurCoord.lon,
+  fromCoord.lat, fromCoord.lon
+);
+
+// Calculate distance Veeravanallur → TO
+const distanceToVeeravanallur = haversineDistance(
+  veeravanallurCoord.lat, veeravanallurCoord.lon,
+  toCoord.lat, toCoord.lon
+);
+
+// Calculate total price for FROM → TO only
+const pricePerKm = transportRates[transport];
+const totalPrice = distance * pricePerKm;
+const roundedPrice = totalPrice.toFixed(2);
+
+// Show all distances
+message.innerHTML = `
+  Distance from <strong>${fromCoord.name}</strong> to <strong>${toCoord.name}</strong>: <strong>${distance.toFixed(2)} km</strong><br>
+  Distance from <strong>Veeravanallur</strong> to <strong>${fromCoord.name}</strong>: <strong>${distanceFromVeeravanallur.toFixed(2)} km</strong><br>
+  Distance from <strong>Veeravanallur</strong> to <strong>${toCoord.name}</strong>: <strong>${distanceToVeeravanallur.toFixed(2)} km</strong><br>
+  Total Price for <strong>${transport}</strong>: ₹<strong>${roundedPrice}</strong> + toll charges
+`;
+
+paymentOptions.dataset.amount = roundedPrice;
+paymentOptions.style.display = "block";
+
+
+      } catch (error) {
+        message.textContent = "❗ " + error.message;
+      }
+    });
+
+    function confirmCOD() {
+      const amount = document.getElementById("paymentOptions").dataset.amount;
+      document.getElementById("codSuccess").textContent = `💵 Booking confirmed. Please pay ₹${amount} + toll charges on delivery.`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel & Transport Booking</title>
+  <link rel="icon" type="image/x-icon" href="WhatsApp Image 2025-06-27 at 11.09.47 AM.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exile&family=New+Amsterdam&family=New+Rocker&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url("all vehicle.jpeg"); /* Path to your image */
+      background-size: cover;  /* Cover the whole element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .social-icons {
+  display: flex; /* Align items horizontally */
+  justify-content: center; /* Center horizontally */
+  gap: 15px; /* Space between icons */
+  margin: 20px 0; /* Add space above and below */
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #f1f1f1; /* Light background for circle */
+  color: #555; /* Default icon color */
+  border-radius: 50%; /* Make them round */
+  font-size: 24px; /* Icon size */
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icons a:hover {
+  background-color: #333; /* Dark background on hover */
+  color: #fff; /* White icons on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.social-icons a[aria-label="Instagram"]:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: #fff;
+}
+
+.social-icons a[aria-label="Facebook"]:hover {
+  background-color: #3b5998;
+}
+
+.social-icons a[aria-label="WhatsApp"]:hover {
+  background-color: #25D366;
+}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      background: rgba(15, 12, 12, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius:20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      max-width: 800px;
+      width: 90%;
+      animation: slideUp 1.5s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .container h3{
+       font-family: "New Amsterdam", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .container h1 {
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #00c6ff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      animation: slideRight 1.5s ease-out;
+    }
+
+    
+    .container p {
+      margin-bottom: 30px;
+      color: #eee;
+      font-size: 1.2rem;
+    }
+
+    .options {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    h1{
+   font-family: "Exile", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  animation: slideRight 1.5s ease-out;
+
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: #fff;
+      padding: 20px;
+      width: 100%;
+      transition: background 0.5s ease;
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #00c6ff;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      background: #00c6ff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .card a:hover {
+      background: #007BFF;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .options {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fa-solid fa-truck-pickup "></i> Ayya Thunai Cabs</h1>
+    <p>Find your perfect ride - choose your distance and start booking!</p>
+
+    <div class="options">
+      <!-- Less than 100km Card -->
+      <div class="card">
+        <img src="chris-liverani-HUJDz6CJEaM-unsplash.jpg" alt="Less than 100km">
+        <div class="card-content">
+          <h3><i class="fas fa-route"></i> Less than 200km</h3>
+          <p>Perfect for short transport and short trips.</p>
+          <a href="http://127.0.0.1:5501/lessthan200.html"><i class="fas fa-arrow-right"></i> Book Now</a>
+        </div>
+      </div>
+
+      
+
+      <!-- More than 100km Card -->
+      <div class="card">
+        <img src="highspeed.jpg" alt="More than 100km">
+        <div class="card-content">
+          <h3><i class="fas fa-bus"></i> More than 200km</h3>
+          <p>Ideal for long-distance transport and long-distance travels.</p>
+          <a href="http://127.0.0.1:5501/morethan200.html"><i class="fas fa-arrow-right"></i> Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="social-icons">
+      <a href="https://www.instagram.com/ayya_thunai_cabs" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/1J9NHWXJ8q/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/918682905640" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <h4>Contact 8754795314  | 8682905640</h4>
+     &copy; 2025 Ayya Thunai Travels | Designed By BLACK ❤️
+    </div>
+  </div>
+</body>
+</html>

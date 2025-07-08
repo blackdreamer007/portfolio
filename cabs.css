@@ -1,0 +1,204 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family:'Pacifico', 'cursive';
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #008080;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Booking Form Container */
+.booking-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Form Layout */
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Form Inputs */
+.booking-form input,
+.booking-form select,
+.booking-form button,
+.button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+input {
+  font-size: 18px;
+  height: 45px;
+}
+
+
+/* Main Button Style */
+.booking-form button,
+.button {
+  background-color: #008080;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  text-decoration: none;
+}
+
+/* Hover Effect */
+.booking-form button:hover,
+.button:hover {
+  background-color: #006666;
+}
+
+/* Destinations Section */
+.destinations {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Destination Cards Layout */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Individual Card Styling */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Image */
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Card Title */
+.card h3 {
+  margin: 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #eee;
+  margin-top: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+footer .social-icons {
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+  color: #000000;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+footer .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+footer .fa-instagram:hover { color: #d4309d; }
+footer .fa-facebook:hover { color: #3b5998; }
+footer .fa-whatsapp:hover { color: #25D366; }
+
+
+/* Footer */
+footer {
+  background-color: #049b9b;
+  color: rgb(255, 253, 253);
+  text-align: center;
+  padding: 1rem;
+}
+
+.icon {
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.icon.instagram {
+  background: #E1306C;
+}
+
+.icon.facebook {
+  background: #3b5998;
+}
+
+.icon.whatsapp {
+  background: #25D366;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.icon {
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.icon.instagram {
+  background: #E1306C;
+}
+
+.icon.facebook {
+  background: #3b5998;
+}
+
+.icon.whatsapp {
+  background: #25D366;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
